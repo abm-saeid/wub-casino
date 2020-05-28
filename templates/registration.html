@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <div class="w3-myfont" style="margin-left: 25%; margin-top: 2%; width: 50%; border: white; border-width: 4px;">
+        <form method="POST" action="">
+            {{ form.hidden_tag()}}
+            <fieldset style="border-width: 10px;">
+                <legend style="font-size: xx-large;">
+                    Register Now
+                </legend>
+                <div style="font-weight: bold; font-size: 15px; margin-top: 10px;">
+                    {{ form.name.label() }}
+                    {{ form.name() }}
+                </div style="font-weight: bold; font-size: 15px; margin-top: 10px;">
+                <div>
+                    {{ form.link.label() }}
+                    {{ form.link() }}
+                </div>
+                <div style="font-weight: bold; font-size: 15px; margin-top: 10px;">
+                    {{ form.promo.label() }}
+                    {{ form.promo() }}
+                </div>
+                <div class="w3-btn w3-black w3-round-large" style="margin-top: 10px ;">
+                    {{ form.submit() }}
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

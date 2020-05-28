@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title>10 Minute Casino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    .w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: black;
+}
+</style>
+
+{% if result %}
+    <div style="font-size: x-large;">
+        Result: {{ result.answer }}
+    </div>
+    <div style="font-size: x-large;">
+        Display: {{ result.result }}
+    </div>
+    <div style="font-size: x-large;">
+        {{ result.id_num }}'s Balance: {{ result.amount }}
+    </div>
+{% else %}
+    <form method="POST">
+        {{ form.hidden_tag()}}
+        <fieldset>
+            <div>
+                {{ form.id_num.label() }}
+                {{ form.id_num() }}
+            </div>
+            <div>
+                {{ form.prediction.label() }}
+                {{ form.prediction() }}
+            </div>
+            <div>
+                {{ form.color.label() }}
+                {{ form.color() }}
+            </div>
+            <div>
+                {{ form.bet_amount.label() }}
+                {{ form.bet_amount() }}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </fieldset>
+    </form>
+{% endif %}

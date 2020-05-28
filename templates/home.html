@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    {% if answer %}
+    <div class="w3-center" style="width: 50%; margin-left: 25%; margin-block-start: 20px ;"></div>
+        {{ answer }}
+        <div class="w3-center" style="width: 50%; margin-left: 25%; margin-block-start: 20px ; font-size: xx-large;">
+            {% if hexa %}
+            Your ID: {{ hexa }}
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    <div style="margin-top: 20px; font-size: x-large; color: orangered;">
+        Total transactions: {{ transaction.balance }} <img src="{{url_for('static', filename='coin.png')}}" style="width: 26px;">
+    </div>
+    <div style="margin-top: 30px;">
+        <div class="w3-center" style="font-size: xx-large;">Leaderboard</div>
+        
+        <div class="w3-center" style="width: 50%; margin-left: 25%; margin-block-start: 20px ;">
+            {% if search %}
+            <table class="w3-table-all w3-card-4 w3-myfont" style="color: black;">
+                {% for rows in search %}
+                    <tr>
+                        <td>
+                            {{ rows.name }}
+                        </td>
+                        <td  class="w3-right-align">
+                            {{ rows.balance }} <img src="{{url_for('static', filename='coin.png')}}" style="width: 20px;">
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            No one registered till now
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

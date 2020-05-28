@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>10 Minute Casino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    .w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: black;
+}
+</style>
+
+<nav class="w3-bar w3-dark-grey w3-myfont w3-center" style="font-size: x-large;">
+    <span><a href="{{ url_for('coinflip') }}" target="fram">Coinflip</a></span>
+    <span><a href="{{ url_for('dice') }}" target="fram">Dice</a></span>
+    <span><a href="{{ url_for('slots') }}" target="fram">Slots</a></span>
+    <span><a href="{{ url_for('ludo') }}" target="fram">Ludo</a></span>
+    <span><a href="{{ url_for('roulette') }}" target="fram">Roulette</a></span>
+</nav>
+<div class="w3-center">
+<iframe src="" name="fram" style="height: 800px; width: 800px; border: cornflowerblue;"></iframe>
+</div>
